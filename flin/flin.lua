@@ -3,6 +3,7 @@
 -- cyclic poly-rhythm music box
 --
 -- originally by tehn, then artfwo
+-- updated for 2.0 by justmat
 --
 -- press buttons on the grid to
 -- start cycling notes
@@ -14,7 +15,7 @@ local g = grid.connect(1)
 
 local GRID_HEIGHT = 8
 local DURATION_1 = 1 / 20
-local GRID_FRAMERATE = 1 / 30
+local GRID_FRAMERATE = 1 / 60
 local SCREEN_FRAMERATE = 1 / 30
 
 local notes = { 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28 }

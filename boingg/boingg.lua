@@ -1,13 +1,21 @@
---- Boingg - a bouncing ball app
---- Heavily based on flin 
---- by artfwo
---- Press a grid key to 
---- start a bouncing ball
---- and the bottom key to stop
+-- Boingg
+-- a bouncing ball app
+--
+-- Heavily based on flin 
+-- by artfwo
+-- Press a grid key to 
+-- start a bouncing ball
+--
+-- press the bottom key
+-- to stop
+--
+-- enc2 and enc3 adjust scales
+-- key2 starts a ball bouncing
+-- key3 stops ball from bouncing
+--
+-- originally by declutter
+-- updated for 2.0 by justmat
 
---- enc2 and enc3 to adjust the scales
---- key 2 to start / key 3 to stop a bounce on the currently selected note on the screen
---- Todo - add alternative scales from mark_eats
 
 engine.name = 'PolySub'
 
