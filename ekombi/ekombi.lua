@@ -67,6 +67,8 @@
 --
 -- 0 = affectable
 -- 1 = unaffectable
+-- ----------
+-- updated for 2.0 by justmat
 
 engine.name = 'Ack'
 
