@@ -18,6 +18,7 @@ local DURATION_1 = 1 / 20
 local GRID_FRAMERATE = 1 / 60
 local SCREEN_FRAMERATE = 1 / 30
 
+local ii_options = {"off", "ii jf"}
 local notes = { 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28 }
 local cycles = {}
 local cycle_metros = {}
@@ -67,6 +68,9 @@ local function update_cycle(x, stage)
   local on = leds[1] == 1
   if on then
     engine.start(x, midicps(notes[x] + params:get("transpose")))
+    if params:get("ii") == 2 then
+      crow.ii.jf.play_note(((notes[x] + params:get("transpose")) - 60) / 12, 5)
+    end
   else
     engine.stop(x)
   end
@@ -111,6 +115,8 @@ function init()
       cycle_metros[i].time = 4 / t * cycles[i].speed
     end
   end)
+  params:add_option("ii", "ii", ii_options, 1)
+  params:set_action("ii", function() crow.ii.pullup(true) crow.ii.jf.mode(1) end)
 
   params:add_number("transpose", "transpose", 0, 127, 48)
 
